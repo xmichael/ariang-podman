@@ -1,0 +1,11 @@
+[Unit]
+Description=Set permissions for /downloads after podman run
+Before=aria2c.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/bash /root/init.sh
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,4 @@
+# Quick test aria2c
+curl http://127.0.0.1:3333/bg/jsonrpc
+# Quick test ariang
+curl http://127.0.0.1:3333/fg/index.html

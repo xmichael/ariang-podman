@@ -1,0 +1,11 @@
+# install at ~/.config/systemd/user/aria2cd.service
+[Unit]
+Description=aria2 Daemon
+
+[Service]
+User=user
+Group=user
+ExecStart=/usr/bin/aria2c --conf-path=/home/user/aria/aria2.conf
+
+[Install]
+WantedBy=default.target

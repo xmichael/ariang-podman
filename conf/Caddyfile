@@ -1,0 +1,18 @@
+{
+	admin off
+	auto_https off
+}
+# without http: κανει αυτοματο https με acme negotiation
+http://localhost:3333 {
+	# /fg is ariang static html fileserver, /bg is aria2 jsonrpc daemon
+	handle_path /fg* {
+		root * /home/user/aria/ariang
+		file_server
+	}
+	handle_path /bg/* {
+		reverse_proxy http://localhost:6800
+	}
+	handle {
+		respond "Not found" 404
+	}
+}

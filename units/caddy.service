@@ -1,0 +1,11 @@
+# install at ~/.config/systemd/user/caddy.service
+[Unit]
+Description=caddy proxy for ariang and aria_rpc
+
+[Service]
+User=user
+Group=user
+ExecStart=caddy run --config /home/user/aria/Caddyfile
+
+[Install]
+WantedBy=default.target
