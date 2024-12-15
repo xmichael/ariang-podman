@@ -24,7 +24,7 @@ podman build --build-arg ROOT_PASS=supersecret -t ariang .
 2. Run the container specifying a downloads folder e.g. *~/Documents/downloads* as follows. You can also use a different host:port than 127.0.0.1:3333.
 
 ```
-podman run -e ./arguments.conf -it --rm -v ~/Documents/downloads:/downloads:U -p127.0.0.1:3333:3333  ariang
+podman run --env-file ./arguments.conf -it --rm -v ~/Documents/downloads:/downloads:U -p127.0.0.1:3333:3333  ariang
 ```
 
 3. Open the browser at http://localhost:3333/fg/index.html
